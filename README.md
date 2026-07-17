@@ -1,7 +1,5 @@
 # Sistema-controle-de-contas
 
-<<<<<<< HEAD
-=======
 Primeiro projeto de portfólio desenvolvido para praticar persistência de dados em Python utilizando JSON.
 
 ## Funcionalidades atuais
@@ -45,4 +43,4 @@ controle-contas/
 ## Objetivo do projeto
 
 Este projeto faz parte do meu portfólio de estudos em **Python**, com foco em lógica de programação, manipulação de arquivos, listas, dicionários e persistência de dados.
->>>>>>> 3d7ef39 (first commit)
+
