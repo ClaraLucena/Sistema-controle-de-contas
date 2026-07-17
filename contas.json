@@ -1,0 +1,30 @@
+[
+    {
+        "nome": "internet",
+        "dia": 5,
+        "mes": 8,
+        "valor": 75.0,
+        "fixa": "sim"
+    },
+    {
+        "nome": "vivo",
+        "dia": 1,
+        "mes": 8,
+        "valor": 135.88,
+        "fixa": "sim"
+    },
+    {
+        "nome": "celular",
+        "dia": 7,
+        "mes": 8,
+        "valor": 144.0,
+        "fixa": "sim"
+    },
+    {
+        "nome": "moto",
+        "dia": 20,
+        "mes": 8,
+        "valor": 800.0,
+        "fixa": "sim"
+    }
+]
