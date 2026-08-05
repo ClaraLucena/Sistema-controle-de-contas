@@ -1,8 +1,17 @@
 import json
 
-total = 0
-quantidade = 0
-contaFixa = 0
+
+def resumoContas (contas):
+    total = 0
+    quantidade = 0
+    contaFixa = 0
+    for conta in contas:
+        quantidade += 1
+        total += conta["valor"]
+
+        if conta["fixa"] == "sim":
+            contaFixa += 1
+    return total, quantidade, contaFixa
 
 #salva os arquivos sem apagar os anteriores:
 try:
@@ -12,12 +21,7 @@ except:
     contas = []
 
 # Percorre as contas carregadas do JSON para atualizar quantidade, total e contas fixas
-for conta in contas:
-    quantidade += 1
-    total += conta["valor"]
 
-    if conta["fixa"] == "sim":
-        contaFixa += 1
 
 conta = str.lower(input("Deseja cadastrar a conta? "))
 
@@ -29,30 +33,24 @@ while conta == "sim":
 
     if ((data >=1 and data <=31) and (mes >=1 and mes<=12)):
         print("data valida")
-        quantidade += 1
-        total += valor
+        fixa = str.lower(input("esta conta é fixa? "))
+
+        contaAtual={
+            "nome": nome,
+             "dia": data,
+             "mes": mes,
+             "valor": valor,
+            "fixa": fixa
+        }
+        #adiciona os dados na array  
+        contas.append(contaAtual)
+        total, quantidade, contaFixa = resumoContas(contas)
+
     else: 
         print("data inválida")
-
-    fixa = str.lower(input("esta conta é fixa? "))
-    if fixa == "sim":
-        contaFixa+=1
-
-    contaAtual={
-        "nome": nome,
-        "dia": data,
-        "mes": mes,
-        "valor": valor,
-        "fixa": fixa
-    }
-#adiciona os dados na array  
-    contas.append(contaAtual)
-
     conta = str.lower(input("Deseja cadastrar outra conta? "))
 
-#salva os dados novos no json
-with open("contas.json", "w") as conta:
-    json.dump(contas, conta, indent=4)
+
 
 #percorre as informações das contas e exibe
 for conta in contas:
@@ -62,5 +60,39 @@ for conta in contas:
     print(f"Fixa: {conta['fixa']}")
     print("-" * 30)
 
-print(f"Total das contas a pagar: {total}")
+print(f"Total das contas a pagar: R${total:.2f}")
 
+remove = str.lower(input("Deseja remover alguma conta? "))
+
+if remove == "sim":
+    print("lista de contas: ")
+    #percorre a lsita para ver qual remover
+    for conta in contas:
+        print(conta['nome'])
+    removeconta= str.lower(input("Qual conta você deseja remover? "))
+    
+
+#percorre as contas para remover
+    encontrou = False
+
+    for conta in contas:
+        if conta["nome"] == removeconta:
+            contas.remove(conta)
+            encontrou = True
+            print("Conta removida com sucesso!")
+            
+            break
+
+    if not encontrou:
+        print("Conta não encontrada.")
+
+    total, quantidade, contaFixa = resumoContas(contas)
+#salva os dados novos no json
+with open("contas.json", "w") as conta:
+    json.dump(contas, conta, indent=4)
+
+
+print("\nResumo atualizado")
+print(f"Quantidade de contas: {quantidade}")
+print(f"Contas fixas: {contaFixa}")    
+print(f"Total de contas atualizado: R${total:.2f} ")

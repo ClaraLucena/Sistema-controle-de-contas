@@ -1,12 +1,5 @@
 [
     {
-        "nome": "internet",
-        "dia": 5,
-        "mes": 8,
-        "valor": 75.0,
-        "fixa": "sim"
-    },
-    {
         "nome": "vivo",
         "dia": 1,
         "mes": 8,
