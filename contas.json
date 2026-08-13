@@ -19,5 +19,19 @@
         "mes": 8,
         "valor": 800.0,
         "fixa": "sim"
+    },
+    {
+        "nome": "luz",
+        "dia": 8,
+        "mes": 7,
+        "valor": 458.0,
+        "fixa": "sim"
+    },
+    {
+        "nome": "tv",
+        "dia": 8,
+        "mes": 5,
+        "valor": 48.0,
+        "fixa": "nao"
     }
 ]
