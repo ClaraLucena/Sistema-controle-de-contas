@@ -1,3 +1,14 @@
+import json
+def carregarContas():
+    # Carrega as contas salvas sem apagar as anteriores
+    try:
+        with open("contas.json", "r") as arquivo:
+            lista_contas = json.load(arquivo)
+
+    except:
+        lista_contas = []
+    return lista_contas
+        
 #Função para calcular o resumo das contas, total, quantidade, fixas
 def resumoContas (contas):
     total = 0
@@ -42,3 +53,4 @@ def removeConta (contas, nomeConta):
 
     if not encontrou:
         print("Conta não encontrada.")
+
