@@ -1,8 +1,11 @@
 import json
+from pathlib import Path
+
+CAMINHO_ARQUIVO = Path(__file__).parent / "contas.json"
 def carregarContas():
     # Carrega as contas salvas sem apagar as anteriores
     try:
-        with open("contas.json", "r") as arquivo:
+        with open(CAMINHO_ARQUIVO, "r") as arquivo:
             lista_contas = json.load(arquivo)
 
     except:
@@ -84,7 +87,7 @@ def listarContas(contas):
         print("-" * 30)     
 
 def salvarContas (lista_contas):
-    with open("contas.json", "w") as arquivo:
+    with open(CAMINHO_ARQUIVO, "w") as arquivo:
         json.dump(lista_contas, arquivo, indent=4)
         
 #função para remover conta

@@ -1,4 +1,4 @@
-import contas
+import contas as contas
 
 #chamada da função que carrega as contas
 lista_contas = contas.carregarContas()
