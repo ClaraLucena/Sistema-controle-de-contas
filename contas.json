@@ -14,13 +14,6 @@
         "fixa": "sim"
     },
     {
-        "nome": "moto",
-        "dia": 20,
-        "mes": 8,
-        "valor": 800.0,
-        "fixa": "sim"
-    },
-    {
         "nome": "luz",
         "dia": 8,
         "mes": 7,

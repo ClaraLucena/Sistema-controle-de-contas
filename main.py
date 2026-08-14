@@ -1,63 +1,18 @@
-import json
 import contas
 
 #chamada da função que carrega as contas
 lista_contas = contas.carregarContas()
 
-
 # Calcula o resumo das contas que já estavam salvas
 total, quantidade, contaFixa = contas.resumoContas(lista_contas)
-
 
 # Pergunta se o usuário deseja cadastrar uma conta
 conta = str.lower(input("Deseja cadastrar uma conta? "))
 
-
 while conta == "sim":
-
-    nome = input("Nome da conta: ").lower()
-    data = int(input("Informe o dia do vencimento: "))
-    mes = int(input("Informe o mês do vencimento: "))
-    valor = float(input("Valor da conta: "))
-
-
-    # Verifica se a data é válida
-    if ((data >= 1 and data <= 31) and
-        (mes >= 1 and mes <= 12)):
-
-        print("Data válida.")
-
-        fixa = str.lower(input("Esta conta é fixa? (sim / nao): "))
-
-
-        # Valida a resposta sobre conta fixa
-        while fixa != "sim" and fixa != "nao":
-
-            print("Digite apenas sim ou nao.")
-
-            fixa = str.lower(input("Esta conta é fixa? (sim / nao): "))
-
-
-        # Cria a conta atual
-        contaAtual = {
-            "nome": nome,
-            "dia": data,
-            "mes": mes,
-            "valor": valor,
-            "fixa": fixa
-        }
-
-
-        # Adiciona a nova conta à lista
-        lista_contas.append(contaAtual)
-
-
-        # Atualiza o resumo das contas
-        total, quantidade, contaFixa = contas.resumoContas(lista_contas)
-
-    else:
-        print("Data inválida.")
-
+    contas.cadastrarConta(lista_contas)
+    # Atualiza o resumo das contas
+    total, quantidade, contaFixa = contas.resumoContas(lista_contas)
     conta = str.lower(input("Deseja cadastrar outra conta? "))
 
 # Exibe todas as contas cadastradas
@@ -67,7 +22,6 @@ print(f"Total das contas a pagar: R$ {total:.2f}")
 
 # Pergunta se deseja remover uma conta
 remove = str.lower(input("Deseja remover alguma conta? "))
-
 
 if remove == "sim":
     print("Lista de contas:")
@@ -85,15 +39,8 @@ if remove == "sim":
     total, quantidade, contaFixa = contas.resumoContas(lista_contas)
 
 
-# Salva os dados atualizados no JSON
-with open("contas.json", "w") as arquivo:
-
-    json.dump(
-        lista_contas,
-        arquivo,
-        indent=4
-    )
-
+# chama a função para salvar os dados atualizados no JSON
+contas.salvarContas(lista_contas)
 
 # Exibe o resumo final
 print("\n--- RESUMO ATUALIZADO ---")
