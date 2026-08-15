@@ -1,17 +1,10 @@
 [
     {
-        "nome": "vivo",
-        "dia": 1,
-        "mes": 8,
-        "valor": 135.88,
-        "fixa": "sim"
-    },
-    {
-        "nome": "celular",
-        "dia": 7,
-        "mes": 8,
-        "valor": 144.0,
-        "fixa": "sim"
+        "nome": "string",
+        "dia": 0,
+        "mes": 0,
+        "valor": 0.0,
+        "fixa": "string"
     },
     {
         "nome": "luz",
@@ -21,10 +14,24 @@
         "fixa": "sim"
     },
     {
-        "nome": "tv",
-        "dia": 8,
-        "mes": 5,
-        "valor": 48.0,
-        "fixa": "nao"
+        "nome": "string",
+        "dia": 0,
+        "mes": 0,
+        "valor": 0.0,
+        "fixa": "string"
+    },
+    {
+        "nome": "string",
+        "dia": 0,
+        "mes": 0,
+        "valor": 0.0,
+        "fixa": "string"
+    },
+    {
+        "nome": "string",
+        "dia": 0,
+        "mes": 0,
+        "valor": 0.0,
+        "fixa": "string"
     }
 ]

@@ -89,19 +89,14 @@ def listarContas(contas):
 def salvarContas (lista_contas):
     with open(CAMINHO_ARQUIVO, "w") as arquivo:
         json.dump(lista_contas, arquivo, indent=4)
-        
+    
 #função para remover conta
-def removeConta (contas, nomeConta):
-    encontrou = False
+def removeConta(contas, nomeConta):
+    nomeConta = nomeConta.strip().lower()
+
     for conta in contas:
-        if conta["nome"] == nomeConta:
+        if conta["nome"].strip().lower() == nomeConta:
             contas.remove(conta)
-            encontrou = True
+            return True
 
-            print("Conta removida com sucesso!")
-            
-            break
-
-    if not encontrou:
-        print("Conta não encontrada.")
-
+    return False
