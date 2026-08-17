@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8fafc;
+  color: #334155;
+}
+header {
+  padding: 32px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 32px;
+  color: #1e3a8a;
+}
+
+header p {
+  margin-top: 8px;
+  color: #64748b;
+}
+.resumo {
+  display: flex;
+  gap: 20px;
+  padding: 0 32px;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  flex: 1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.card p {
+  margin: 0;
+  color: #64748b;
+}
+
+.card h2 {
+  margin-top: 10px;
+  color: #1e3a8a;
+}
+.proximas {
+  margin: 32px auto;
+  max-width: 850px;
+}
+
+.proximas h2 {
+  color: #1e3a8a;
+  margin-bottom: 16px;
+}
+.conta-proxima {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+
+  padding: 18px 20px;
+}
+@media (max-width: 768px) {
+  .resumo {
+    flex-direction: column;
+    padding: 0 16px;
+  }
+
+  header {
+    padding: 24px 16px;
+  }
+}
