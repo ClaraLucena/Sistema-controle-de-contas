@@ -8,6 +8,7 @@ body {
   background-color: #f8fafc;
   color: #334155;
 }
+
 header {
   padding: 32px;
 }
@@ -22,6 +23,9 @@ header p {
   margin-top: 8px;
   color: #64748b;
 }
+
+/* RESUMO */
+
 .resumo {
   display: flex;
   gap: 20px;
@@ -44,29 +48,102 @@ header p {
 
 .card h2 {
   margin-top: 10px;
+  margin-bottom: 0;
   color: #1e3a8a;
 }
+
+/* PRÓXIMAS CONTAS */
+
 .proximas {
   margin: 32px auto;
   max-width: 850px;
+  padding: 0 16px;
 }
 
 .proximas h2 {
   color: #1e3a8a;
   margin-bottom: 16px;
 }
+
 .conta-proxima {
   display: flex;
   align-items: center;
-  gap: 20px;
 
   background-color: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 10px;
 
   padding: 18px 20px;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
 }
+
+.coluna-conta {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.coluna-conta:first-child {
+  padding-left: 0;
+}
+
+.coluna-conta:last-child {
+  padding-right: 0;
+}
+
+.coluna-conta + .coluna-conta {
+  border-left: 1px solid #94a3b8;
+}
+
+.rotulo {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.coluna-conta strong {
+  color: #334155;
+}
+
+/* BOTÃO */
+
+button {
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #172554;
+}
+
+/* ÁREA DE CADASTRO */
+
+.acao-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin: 32px 0;
+}
+
+.acao-home p {
+  margin: 0;
+  color: #64748b;
+  font-size: 16px;
+}
+
+/* RESPONSIVIDADE */
+
 @media (max-width: 768px) {
+
   .resumo {
     flex-direction: column;
     padding: 0 16px;
@@ -74,5 +151,24 @@ header p {
 
   header {
     padding: 24px 16px;
+  }
+
+  .proximas {
+    margin: 24px auto;
+  }
+
+  .conta-proxima {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px;
+  }
+
+  .coluna-conta {
+    padding: 12px 0;
+  }
+
+  .coluna-conta + .coluna-conta {
+    border-left: none;
+    border-top: 1px solid #cbd5e1;
   }
 }

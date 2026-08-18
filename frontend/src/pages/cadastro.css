@@ -1,0 +1,48 @@
+.ambiente-cad {
+  background-color: #dce6f3;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 460px;
+}
+.cadastro {
+  padding: 32px;
+}
+
+.cadastro form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.cadastro {
+  padding: 32px;
+}
+
+.cadastro form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.campo input {
+  width: 100%;
+  max-width: 350px;
+  padding: 7px 10px;
+  background-color: #ffffff;
+  border: 1px solid #d6deea;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  border-color:#1e3a8a;
+}
