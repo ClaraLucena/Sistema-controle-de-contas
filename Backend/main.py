@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import Optional
 import contas
+from fastapi.middleware.cors import CORSMiddleware
 
 
 class Conta(BaseModel):
@@ -22,6 +23,13 @@ class ContaAtualizacao(BaseModel):
 
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/contas")
 def buscar_contas():
