@@ -1,0 +1,51 @@
+[
+    {
+        "nome": "internet",
+        "dia": 15,
+        "mes": 5,
+        "valor": 4654.0,
+        "fixa": "sim"
+    },
+    {
+        "nome": "internet",
+        "dia": 15,
+        "mes": 5,
+        "valor": 4654.0,
+        "fixa": "sim"
+    },
+    {
+        "nome": "internet",
+        "dia": 15,
+        "mes": 5,
+        "valor": 4654.0,
+        "fixa": "sim"
+    },
+    {
+        "nome": "internet",
+        "dia": 15,
+        "mes": 5,
+        "valor": 4654.0,
+        "fixa": "sim"
+    },
+    {
+        "nome": "kjfjeb",
+        "dia": 5,
+        "mes": 5,
+        "valor": 5555.0,
+        "fixa": "nao"
+    },
+    {
+        "nome": "ddd",
+        "dia": 5,
+        "mes": 5,
+        "valor": 555555.0,
+        "fixa": "sim"
+    },
+    {
+        "nome": "internet",
+        "dia": 5,
+        "mes": 4,
+        "valor": 458.0,
+        "fixa": "sim"
+    }
+]
