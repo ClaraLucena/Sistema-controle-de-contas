@@ -1,3 +1,6 @@
+
+/* CONFIGURAÇÕES GERAIS */
+
 * {
   box-sizing: border-box;
 }
@@ -5,86 +8,119 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f8fafc;
+  background-color: #f4f7fc;
   color: #334155;
 }
 
-/* HEADER */
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* PÁGINA PRINCIPAL */
+
+.pagina-principal {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 35px 40px;
+}
+
+/* CABEÇALHO */
 
 header {
-  padding: 32px;
+  margin-bottom: 35px;
 }
 
 header h1 {
   margin: 0;
   font-size: 32px;
   color: #1e3a8a;
+  letter-spacing: -0.5px;
 }
 
 header p {
-  margin-top: 8px;
+  margin-top: 10px;
   color: #64748b;
+  font-size: 16px;
 }
 
-/* RESUMO */
+/* CARTÕES DE RESUMO */
 
 .resumo {
-  display: flex;
-  gap: 20px;
-  padding: 0 32px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-bottom: 40px;
 }
 
 .card {
-  flex: 1;
-  padding: 20px;
-
+  padding: 25px;
   background-color: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 12px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(30, 58, 138, 0.08);
 }
 
 .card p {
   margin: 0;
   color: #64748b;
+  font-size: 14px;
 }
 
 .card h2 {
-  margin-top: 10px;
-  margin-bottom: 0;
+  margin: 14px 0 0;
   color: #1e3a8a;
+  font-size: 27px;
 }
 
-/* PRÓXIMAS CONTAS */
+/* LISTA DE CONTAS */
 
 .proximas {
-  max-width: 850px;
-  margin: 32px auto;
-  padding: 0 16px;
+  width: 100%;
+  margin: 0 auto 35px;
+  padding: 28px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.04);
 }
 
 .proximas h2 {
-  margin-bottom: 16px;
+  margin: 0 0 24px;
   color: #1e3a8a;
+  font-size: 21px;
 }
+
+/* CADA CONTA */
 
 .conta-proxima {
   display: flex;
   align-items: center;
+  gap: 10px;
+  padding: 20px;
+  margin-bottom: 12px;
+  background-color: #f8faff;
+  border: 1px solid #e8edf5;
+  border-radius: 12px;
+  transition: background-color 0.2s ease;
+}
 
-  padding: 18px 20px;
-
-  background-color: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 10px;
-
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+.conta-proxima:hover {
+  background-color: #eef3fc;
 }
 
 .coluna-conta {
   flex: 1;
-  padding: 0 20px;
+  min-width: 0;
+  padding: 0 18px;
 }
 
 .coluna-conta:first-child {
@@ -96,35 +132,63 @@ header p {
 }
 
 .coluna-conta + .coluna-conta {
-  border-left: 1px solid #94a3b8;
+  border-left: 1px solid #dbe3ee;
 }
 
 .rotulo {
   display: block;
-  margin-bottom: 6px;
-
-  font-size: 13px;
+  margin-bottom: 7px;
+  font-size: 12px;
   color: #64748b;
 }
 
 .coluna-conta strong {
   color: #334155;
+  font-size: 15px;
+  overflow-wrap: anywhere;
 }
 
-/* BOTÕES */
+/* ÁREA DE CADASTRO NA HOME */
+
+.acao-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin: 35px 0;
+}
+
+.acao-home p {
+  margin: 0;
+  color: #64748b;
+  font-size: 15px;
+}
+
+.botao-cadastro {
+  padding: 14px 28px;
+  background-color: #1e3a8a;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.botao-cadastro:hover {
+  background-color: #172554;
+  transform: translateY(-2px);
+}
+
+/* BOTÕES GERAIS */
 
 button {
   padding: 12px 20px;
-
   background-color: #1e3a8a;
   color: #ffffff;
-
   border: none;
-  border-radius: 8px;
-
-  font-size: 16px;
-  cursor: pointer;
-
+  border-radius: 9px;
+  font-size: 15px;
   transition: background-color 0.2s ease;
 }
 
@@ -132,72 +196,42 @@ button:hover {
   background-color: #172554;
 }
 
-/* AÇÃO DA HOME */
-
-.acao-home {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  gap: 12px;
-  margin: 32px 0;
-}
-
-.acao-home p {
-  margin: 0;
-
-  font-size: 16px;
-  color: #64748b;
-}
-
 /* PÁGINA DE CADASTRO */
 
 .pagina-cadastro {
   min-height: 100vh;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
-  padding: 32px 16px;
-
-  background-color: #f8fafc;
+  padding: 35px 16px;
+  background-color: #f4f7fc;
 }
 
 .cadastro {
   width: 100%;
   max-width: 520px;
-
   padding: 32px;
-
   background-color: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 18px;
-
-  box-shadow: 0 10px 30px rgba(30, 58, 138, 0.08);
+  box-shadow: 0 8px 25px rgba(30, 58, 138, 0.07);
 }
 
 .cadastro h1 {
-  margin: 0 0 24px;
-
+  margin: 0 0 25px;
   text-align: center;
-
   color: #1e3a8a;
-  font-size: 28px;
+  font-size: 27px;
 }
 
-/* CAIXA INTERNA DO FORMULÁRIO */
+/* CAIXA DO FORMULÁRIO */
 
 .ambiente-cad {
   width: 100%;
-
   padding: 28px;
-
-  background-color: #e8eef7;
-  border: 1px solid #dbe3ee;
-  border-radius: 16px;
-
-  box-shadow: 0 4px 14px rgba(30, 58, 138, 0.05);
+  background-color: #f1f5fb;
+  border: 1px solid #e1e8f2;
+  border-radius: 14px;
 }
 
 /* FORMULÁRIO */
@@ -211,67 +245,37 @@ button:hover {
 .campo {
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: 8px;
 }
 
 .campo label {
-  font-size: 15px;
+  font-size: 14px;
+  font-weight: 600;
   color: #334155;
 }
-
-/* INPUTS NORMAIS */
 
 .campo input:not([type="checkbox"]) {
   width: 100%;
-
-  padding: 10px 12px;
-
+  padding: 12px 14px;
   background-color: #ffffff;
   color: #334155;
-
   border: 1px solid #cbd5e1;
   border-radius: 9px;
-
   font-size: 15px;
   outline: none;
-
-  transition:
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .campo input:not([type="checkbox"]):focus {
-  border-color: #1e3a8a;
-  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.08);
+  border-color: #3159a5;
+  box-shadow: 0 0 0 3px rgba(49, 89, 165, 0.12);
 }
 
-/* CONTA FIXA */
+/* CHECKBOX */
 
-.campo-fixa {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 14px 16px;
-
-  background-color: #ffffff;
-  border: 1px solid #cbd5e1;
-  border-radius: 10px;
-}
-
-.campo-fixa label {
-  font-weight: 600;
-  color: #1e3a8a;
-  cursor: pointer;
-}
-
-.campo-fixa input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-
-  margin: 0;
-
+.campo input[type="checkbox"] {
+  width: 19px;
+  height: 19px;
   accent-color: #1e3a8a;
   cursor: pointer;
 }
@@ -280,22 +284,15 @@ button:hover {
 
 .cadastro button[type="submit"] {
   width: 100%;
-
-  margin-top: 6px;
-  padding: 12px;
-
+  margin-top: 8px;
+  padding: 13px;
   background-color: #1e3a8a;
   color: #ffffff;
-
   border: none;
   border-radius: 9px;
-
-  font-size: 16px;
-  cursor: pointer;
-
-  transition:
-    background-color 0.2s ease,
-    transform 0.1s ease;
+  font-size: 15px;
+  font-weight: bold;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 .cadastro button[type="submit"]:hover {
@@ -306,35 +303,157 @@ button:hover {
   transform: scale(0.99);
 }
 
+/* BOTÕES DE AÇÃO DAS CONTAS */
+
+.coluna-acoes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.botao-editar {
+  padding: 9px 15px;
+  background-color: #dbeafe;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.botao-editar:hover {
+  background-color: #bfdbfe;
+  color: #1e40af;
+}
+
+.botao-excluir {
+  padding: 9px 15px;
+  background-color: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+
+.botao-excluir:hover {
+  background-color: #fecaca;
+  color: #991b1b;
+}
+
+/* FORMULÁRIO DE EDIÇÃO */
+
+.formulario-edicao {
+  width: 100%;
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(30, 58, 138, 0.06);
+}
+
+.formulario-edicao h2 {
+  margin: 0 0 25px;
+  color: #1e3a8a;
+}
+
+.formulario-edicao form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.formulario-edicao .campo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formulario-edicao .campo input:not([type="checkbox"]) {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  font-size: 15px;
+  outline: none;
+}
+
+.formulario-edicao .campo input:focus {
+  border-color: #3159a5;
+}
+
+/* BOTÕES DO FORMULÁRIO DE EDIÇÃO */
+
+.acoes-edicao {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.acoes-edicao button {
+  flex: 1;
+}
+
+.botao-cancelar {
+  background-color: #e2e8f0;
+  color: #334155;
+}
+
+.botao-cancelar:hover {
+  background-color: #cbd5e1;
+  color: #1e293b;
+}
+
 /* RESPONSIVIDADE */
 
 @media (max-width: 768px) {
-  header {
-    padding: 24px 16px;
+  .pagina-principal {
+    padding: 25px 18px;
+  }
+
+  header h1 {
+    font-size: 27px;
   }
 
   .resumo {
-    flex-direction: column;
-    padding: 0 16px;
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
 
   .proximas {
-    margin: 24px auto;
+    padding: 20px;
   }
 
   .conta-proxima {
     flex-direction: column;
     align-items: stretch;
-    padding: 16px;
+    gap: 0;
+    padding: 12px 16px;
   }
 
   .coluna-conta {
     padding: 12px 0;
   }
 
+  .coluna-conta:first-child,
+  .coluna-conta:last-child {
+    padding: 12px 0;
+  }
+
   .coluna-conta + .coluna-conta {
     border-left: none;
-    border-top: 1px solid #cbd5e1;
+    border-top: 1px solid #dbe3ee;
+  }
+
+  .coluna-acoes {
+    justify-content: flex-start;
+    padding: 12px 0;
   }
 
   .pagina-cadastro {
@@ -349,7 +468,34 @@ button:hover {
     padding: 20px;
   }
 
-  .cadastro h1 {
-    font-size: 24px;
+  .formulario-edicao {
+    padding: 20px;
+  }
+
+  .acoes-edicao {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .pagina-principal {
+    padding: 20px 12px;
+  }
+
+  .card h2 {
+    font-size: 23px;
+  }
+
+  .proximas {
+    padding: 16px;
+  }
+
+  .cadastro {
+    padding: 17px;
+  }
+
+  .ambiente-cad {
+    padding: 15px;
   }
 }

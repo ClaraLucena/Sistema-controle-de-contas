@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 function Cadastro() {
   const [nome, setNome] = useState('')
@@ -7,29 +7,6 @@ function Cadastro() {
   const [mes, setMes] = useState('')
   const [valor, setValor] = useState('')
   const [fixa, setFixa] = useState(false)
-
-  const [contas, setContas] = useState([])
-
-  // Busca as contas cadastradas quando a página é carregada
-  useEffect(() => {
-    async function buscarContas() {
-      try {
-        const resposta = await fetch('http://127.0.0.1:8000/contas')
-
-        if (!resposta.ok) {
-          throw new Error('Erro ao buscar contas')
-        }
-
-        const dados = await resposta.json()
-        setContas(dados)
-      } catch (erro) {
-        console.error(erro)
-        alert('Não foi possível carregar as contas.')
-      }
-    }
-
-    buscarContas()
-  }, [])
 
   // Cadastra uma nova conta
   async function cadastrarConta(e) {
@@ -52,15 +29,12 @@ function Cadastro() {
         body: JSON.stringify(novaConta)
       })
 
-      if (!resposta.ok) {
-        alert('Erro ao cadastrar conta!')
-        return
-      }
-
       const dados = await resposta.json()
 
-      // Atualiza a lista sem precisar recarregar a página
-      setContas(contasAtuais => [...contasAtuais, novaConta])
+      if (!resposta.ok) {
+        alert(dados.detail || 'Erro ao cadastrar conta!')
+        return
+      }
 
       alert(dados.mensagem || 'Conta cadastrada com sucesso!')
 
@@ -146,35 +120,9 @@ function Cadastro() {
             </div>
 
             <button type="submit">Cadastrar</button>
+
           </form>
         </div>
-      </section>
-
-      {/* Lista de contas cadastradas */}
-      <section className="lista-contas">
-        <h2>Contas cadastradas</h2>
-
-        {contas.length === 0 ? (
-          <p>Nenhuma conta cadastrada.</p>
-        ) : (
-          contas.map((conta, indice) => (
-            <div className="item-conta" key={indice}>
-              <h3>{conta.nome}</h3>
-
-              <p>
-                Vencimento: {conta.dia}/{conta.mes}
-              </p>
-
-              <p>
-                Valor: R$ {Number(conta.valor).toFixed(2)}
-              </p>
-
-              <p>
-                Conta fixa: {conta.fixa}
-              </p>
-            </div>
-          ))
-        )}
       </section>
     </main>
   )
