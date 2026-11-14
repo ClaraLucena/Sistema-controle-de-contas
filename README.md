@@ -1,93 +1,129 @@
 # Sistema de Controle de Contas
 
-Projeto desenvolvido em **Python** para praticar lógica de programação, organização de código, funções, manipulação de arquivos e persistência de dados utilizando JSON.
+Projeto desenvolvido para praticar programação e desenvolvimento de aplicações, começando com Python e evoluindo para uma aplicação web com integração entre frontend e backend.
 
-O sistema permite cadastrar, visualizar e remover contas, mantendo os dados salvos mesmo após o encerramento do programa.
+O Sistema de Controle de Contas permite cadastrar, visualizar, editar e remover contas, além de acompanhar informações como valores, vencimentos e contas fixas.
 
-## Funcionalidades atuais
+## Funcionalidades
 
-* Cadastro de contas
-* Validação de dia e mês de vencimento
-* Identificação de contas fixas
-* Validação da resposta de conta fixa
-* Cálculo do valor total das contas
-* Contagem de contas cadastradas
-* Contagem de contas fixas
-* Remoção de contas cadastradas
-* Verificação de conta existente durante a remoção
-* Armazenamento dos dados em `contas.json`
-* Leitura automática das contas já salvas
-* Listagem formatada das contas
-* Organização da lógica do sistema utilizando funções
-* Separação entre o fluxo principal e as funções do sistema
+- Cadastro de contas;
+- Listagem de contas cadastradas;
+- Edição completa dos dados de uma conta;
+- Atualização parcial de informações;
+- Exclusão de contas;
+- Validação dos dados cadastrados;
+- Identificação de contas fixas;
+- Cálculo do valor total das contas;
+- Contagem de contas cadastradas;
+- Contagem de contas fixas;
+- Armazenamento dos dados em arquivo JSON;
+- Persistência dos dados mesmo após reiniciar o servidor.
 
 ## Tecnologias utilizadas
 
-* Python 3
-* Módulo `json`
+**Backend**
+- Python 3
+- FastAPI
+- Pydantic
+- JSON
+
+**Frontend**
+- React
+- JavaScript
+- Vite
+- CSS
 
 ## Estrutura do projeto
 
 ```text
-controle-contas/
+Sistema-controle-de-contas/
 │
-├── main.py
-├── contas.py
-├── contas.json
+├── Backend/
+│   ├── main.py
+│   ├── contas.py
+│   └── contas.json
+│
+├── frontend/
+│   └── Aplicação React
+│
+├── terminal/
+│   └── main.py
+│
 └── README.md
 ```
 
-### `main.py`
+## Como executar o projeto
 
-Responsável pelo fluxo principal do programa e pela interação com o usuário.
+### 1. Backend
 
-### `contas.py`
-
-Contém as funções responsáveis pelas operações do sistema, como:
-
-* carregar contas;
-* salvar contas;
-* cadastrar contas;
-* listar contas;
-* remover contas;
-* calcular o resumo das contas.
-
-### `contas.json`
-
-Arquivo utilizado para armazenar as contas cadastradas e manter os dados entre diferentes execuções do programa.
-
-## Como executar
-
-Certifique-se de possuir o Python 3 instalado.
-
-No terminal, dentro da pasta do projeto, execute:
+Na pasta principal do projeto, execute:
 
 ```bash
-python main.py
+fastapi dev Backend/main.py
 ```
 
-## Próximas melhorias
+O backend ficará disponível em:
 
-* Marcar contas como pagas
-* Separar contas pagas e pendentes
-* Interface gráfica para facilitar a utilização do sistema
-* Relatórios mensais
-* Melhorar as validações de entrada
-* Tratamento específico de erros
-* Melhorar a organização e padronização do código
+`http://127.0.0.1:8000`
+
+A documentação interativa da API pode ser acessada em:
+
+`http://127.0.0.1:8000/docs`
+
+### 2. Frontend
+
+Abra outro terminal e entre na pasta frontend:
+
+```bash
+cd frontend
+```
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+Execute a aplicação:
+
+```bash
+npm run dev
+```
+
+O frontend ficará disponível no endereço informado pelo Vite, normalmente:
+
+`http://localhost:5173`
+
+## API — Rotas disponíveis
+
+| Método | Rota | Descrição |
+|---|---|---|
+| GET | `/contas` | Lista as contas |
+| POST | `/contas` | Cadastra uma conta |
+| PUT | `/contas/{nomeConta}` | Atualiza todos os dados |
+| PATCH | `/contas/{nomeConta}` | Atualiza dados específicos |
+| DELETE | `/contas/{nomeConta}` | Remove uma conta |
+
+## Persistência de dados
+
+Os dados das contas são armazenados no arquivo `Backend/contas.json`, utilizando o módulo JSON do Python.
+
+Dessa forma, as informações permanecem salvas mesmo após o encerramento ou reinicialização do servidor.
 
 ## Objetivo do projeto
 
-Este projeto faz parte do meu portfólio de estudos em **Python** e tem como objetivo desenvolver conhecimentos em:
+Este projeto faz parte do meu processo de aprendizagem em programação e desenvolvimento de software.
 
-* lógica de programação;
-* funções;
-* listas;
-* dicionários;
-* módulos;
-* manipulação de arquivos;
-* JSON;
-* persistência de dados;
-* organização e modularização de código.
+Foi iniciado como uma aplicação de terminal em Python e evoluiu gradualmente para uma aplicação web, permitindo aplicar conhecimentos em:
 
-O projeto está sendo desenvolvido de forma incremental, adicionando novas funcionalidades conforme novos conceitos de Python são estudados e aplicados.
+- Lógica de programação;
+- Funções e modularização;
+- Listas e dicionários;
+- Manipulação de arquivos;
+- Persistência de dados;
+- Desenvolvimento de APIs;
+- Integração entre frontend e backend;
+- Desenvolvimento de interfaces com React;
+- Operações CRUD.
+
+O desenvolvimento acontece de forma incremental, com implementação e testes de novas funcionalidades conforme os conhecimentos são adquiridos.

@@ -1,9 +1,9 @@
 [
     {
-        "nome": "internet a",
+        "nome": "internet",
         "dia": 15,
         "mes": 4,
-        "valor": 45.5,
+        "valor": 56.58,
         "fixa": "sim"
     }
 ]
