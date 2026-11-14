@@ -36,6 +36,7 @@ O Sistema de Controle de Contas permite cadastrar, visualizar, editar e remover 
 ## Estrutura do projeto
 
 ```text
+
 Sistema-controle-de-contas/
 │
 ├── Backend/
@@ -44,12 +45,16 @@ Sistema-controle-de-contas/
 │   └── contas.json
 │
 ├── frontend/
-│   └── Aplicação React
+│   ├── public/
+│   ├── src/
+│   ├── index.html
+│   ├── package.json
+│   └── vite.config.js
 │
-├── terminal/
-│   └── main.py
-│
+├── .gitignore
+├── requirements.txt
 └── README.md
+
 ```
 
 ## Como executar o projeto
